@@ -1,26 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Upload Viewer</title>
-  <style>
-    img { width: 200px; margin: 10px; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Upload and Preview Image (Not Saved)</h1>
-  <input type="file" id="fileInput">
-  <div id="preview"></div>
+  <header>
+    <h1>🌟 My Image Gallery</h1>
+    <p>Hosted entirely on GitHub Pages</p>
+  </header>
 
-  <script>
-    document.getElementById('fileInput').addEventListener('change', function(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const img = document.createElement('img');
-        img.src = URL.createObjectURL(file);
-        document.getElementById('preview').innerHTML = '';
-        document.getElementById('preview').appendChild(img);
-      }
-    });
-  </script>
+  <main class="gallery">
+    <!-- Manually add image paths here -->
+    <img src="images/photo1.jpg" alt="Gallery Image">
+    <img src="images/photo2.jpg" alt="Gallery Image">
+    <img src="images/photo3.jpg" alt="Gallery Image">
+    <!-- Add more images as needed -->
+  </main>
+
+  <footer>
+    <p>Made by You ✨</p>
+  </footer>
 </body>
 </html>
+
