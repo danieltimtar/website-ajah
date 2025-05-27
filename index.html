@@ -26,32 +26,6 @@
 </html>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Upload Viewer</title>
-  <style>
-    img { width: 200px; margin: 10px; }
-  </style>
-</head>
-<body>
-  <h1>Upload and Preview Image (Not Saved)</h1>
-  <input type="file" id="fileInput">
-  <div id="preview"></div>
-
-  <script>
-    document.getElementById('fileInput').addEventListener('change', function(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const img = document.createElement('img');
-        img.src = URL.createObjectURL(file);
-        document.getElementById('preview').innerHTML = '';
-        document.getElementById('preview').appendChild(img);
-      }
-    });
-  </script>
-</body>
-</html>
 
 <h2>Upload an Image</h2>
 
