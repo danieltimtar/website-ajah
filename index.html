@@ -53,3 +53,35 @@
 </body>
 </html>
 
+<h2>Upload an Image</h2>
+
+<input type="file" id="imageInput" accept="image/*">
+<button onclick="previewImage()">Upload</button>
+
+<div id="previewArea" style="margin-top: 20px;">
+  <!-- Uploaded image will appear here -->
+</div>
+
+<script>
+  function previewImage() {
+    const input = document.getElementById('imageInput');
+    const previewArea = document.getElementById('previewArea');
+    previewArea.innerHTML = ''; // clear previous image
+
+    if (input.files && input.files[0]) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.alt = 'Uploaded Image';
+        img.style.maxWidth = '300px';
+        img.style.display = 'block';
+        img.style.marginTop = '10px';
+        previewArea.appendChild(img);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
+
+
