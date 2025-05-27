@@ -13,6 +13,9 @@
     <p>Let the whole world know the fun</p>
   </header>
 
+<input type="text" id="searchInput" placeholder="Search images..." onkeyup="filterImages()" style="margin-bottom: 20px; padding: 8px; width: 100%; max-width: 300px;">
+
+  
   <main class="gallery">
     <img src="cheems.jpg" alt="Gallery Image">
     <img src="pepe.jpg" alt="Gallery Image">
@@ -58,4 +61,19 @@
   }
 </script>
 
+<script>
+  function filterImages() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const images = document.querySelectorAll('.gallery img');
+
+    images.forEach(img => {
+      const altText = img.alt.toLowerCase();
+      if (altText.includes(input)) {
+        img.style.display = '';
+      } else {
+        img.style.display = 'none';
+      }
+    });
+  }
+</script>
 
