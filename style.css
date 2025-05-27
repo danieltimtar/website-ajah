@@ -44,3 +44,8 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
 }
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
