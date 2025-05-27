@@ -25,6 +25,22 @@
   <footer>
     <p>Made with Love✨</p>
   </footer>
+  <script>
+  function filterImages() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const images = document.querySelectorAll('.gallery img');
+
+    images.forEach(img => {
+      const altText = img.alt.toLowerCase();
+      if (altText.includes(input)) {
+        img.style.display = '';
+      } else {
+        img.style.display = 'none';
+      }
+    });
+  }
+</script>
+
 </body>
 </html>
 
@@ -61,19 +77,4 @@
   }
 </script>
 
-<script>
-  function filterImages() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const images = document.querySelectorAll('.gallery img');
-
-    images.forEach(img => {
-      const altText = img.alt.toLowerCase();
-      if (altText.includes(input)) {
-        img.style.display = '';
-      } else {
-        img.style.display = 'none';
-      }
-    });
-  }
-</script>
 
